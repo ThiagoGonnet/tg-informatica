@@ -26,25 +26,25 @@
                 <ul class="list-unstyled">
 
                     <li class="mb-2">
-                        <a href="home" class="text-decoration-none text-secondary">
+                        <a href="inicio" class="text-decoration-none text-secondary">
                             Inicio
                         </a>
                     </li>
 
                     <li class="mb-2">
-                        <a href="about" class="text-decoration-none text-secondary">
+                        <a href="nosotros" class="text-decoration-none text-secondary">
                             Nosotros
                         </a>
                     </li>
 
                     <li class="mb-2">
-                        <a href="shop" class="text-decoration-none text-secondary">
+                        <a href="tienda" class="text-decoration-none text-secondary">
                             Tienda
                         </a>
                     </li>
 
                     <li class="mb-2">
-                        <a href="contact" class="text-decoration-none text-secondary">
+                        <a href="contacto" class="text-decoration-none text-secondary">
                             Contacto
                         </a>
                     </li>

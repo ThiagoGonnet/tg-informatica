@@ -4,7 +4,7 @@
 
         <div class="container">
 
-            <a class="navbar-brand fw-bold text-info" href="home">
+            <a class="navbar-brand fw-bold text-info" href="inicio">
                 TG Informática
             </a>
 
@@ -23,25 +23,25 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="home">
+                        <a class="nav-link active" href="inicio">
                             Inicio
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about">
+                        <a class="nav-link" href="nosotros">
                             Nosotros
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="shop">
+                        <a class="nav-link" href="tienda">
                             Tienda
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact">
+                        <a class="nav-link" href="contacto">
                             Contacto
                         </a>
                     </li>

@@ -13,14 +13,14 @@ class PaginaView
   {
     require_once './app/views/layouts/header.php';
     require_once './app/views/layouts/head.php';
-    require_once "./app/views/templates/tienda.php";
+    require_once './app/views/templates/contacto.php';
     require_once './app/views/layouts/footer.php';
   }
   public function mostrarNosotros()
   {
     require_once './app/views/layouts/header.php';
     require_once './app/views/layouts/head.php';
-    require_once "./app/views/templates/tienda.php";
+    require_once "./app/views/templates/nosotros.php";
     require_once './app/views/layouts/footer.php';
   }
 }

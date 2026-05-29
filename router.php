@@ -9,7 +9,7 @@ session_start();
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 
-$action = "home";
+$action = "inicio";
 
 if (!empty($_GET['action'])) {
   $action = $_GET['action'];
@@ -17,19 +17,19 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) {
-  case 'home':
+  case 'inicio':
     $controller = new PaginaController();
     $controller->mostrarInicio();
     break;
-  case 'contact':
+  case 'contacto':
     $controller = new PaginaController();
     $controller->mostrarContacto();
     break;
-  case 'about':
+  case 'nosotros':
     $controller = new PaginaController();
     $controller->mostrarNosotros();
     break;
-  case 'shop':
+  case 'tienda':
     $controller = new TiendaController();
     $controller->mostrarInicio();
     break;

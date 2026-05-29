@@ -20,7 +20,7 @@
             </a>
 
             <a
-                href="shop"
+                href="tienda"
                 class="btn btn-primary btn-lg px-4"
                 target="_blank">
                 Ver tienda
