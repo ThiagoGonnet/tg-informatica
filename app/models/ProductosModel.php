@@ -14,7 +14,7 @@ class ProductosModel
     $productos = $query->fetchAll(PDO::FETCH_OBJ);
     return $productos;
   }
-  public function traerProductosPorId($id)
+  public function traerProductoPorId($id)
   {
     $query = $this->db->prepare("SELECT * FROM productos WHERE id = ?");
     $query->execute([$id]);
@@ -24,15 +24,21 @@ class ProductosModel
 
   public function insertarProducto($nombre, $descripcion, $precio, $stock, $imagen, $id_categoria)
   {
-    $query = $this->db->prepare("INSERT TO productos(nombre, descripcion, precio, stock, imagen, id_categoria), VALUES(?,?,?,?,?,?)");
+    $query = $this->db->prepare("INSERT INTO productos(nombre, descripcion, precio, stock, imagen, id_categoria) VALUES(?,?,?,?,?,?)");
     $query->execute([$nombre, $descripcion, $precio, $stock, $imagen, $id_categoria]);
-    $productos = $query->fetchAll(PDO::FETCH_OBJ);
     return $this->db->lastInsertId();
   }
   public function eliminarProducto($id_producto)
   {
     $query = $this->db->prepare("DELETE FROM productos WHERE id = ?");
     $query->execute([$id_producto]);
+    return $query->rowCount();
+  }
+  public function editarProducto($nombre, $descripcion, $precio, $stock, $imagen, $id_categoria, $id_producto)
+  {
+    $query = $this->db->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, imagen = ?, id_categoria = ? WHERE id = ?");
+    $query->execute([$nombre, $descripcion, $precio, $stock, $imagen, $id_categoria, $id_producto]);
+
     return $query->rowCount();
   }
 }
