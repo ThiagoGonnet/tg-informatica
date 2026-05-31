@@ -70,7 +70,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 p-4 text-center bg-light border-0 shadow-sm rounded-4">
-                    <h3 class="h5 fw-bold mb-3">Chipeo PS3</h3>
+                    <h3 class="h5 fw-bold mb-3">Personalización de Software</h3>
                     <p>Instalación de HEN y configuración personalizada para PS3.</p>
                 </div>
             </div>

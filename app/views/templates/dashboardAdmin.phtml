@@ -1,14 +1,168 @@
-// tablas con producto y su categoria
+<!-- tablas con producto y su categoria -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre Categoría</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($categorias as $c) { ?>
+      <tr>
+        <td><?php echo $c->id; ?></td>
+        <td><?php echo $c->nombre; ?></td>
+        <td><a href="<?php echo BASE_URL . "eliminarCategoria/" . $c->id ?>">X</a></td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Categoría (ID)</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($productos as $p) { ?>
+      <tr>
+        <td><?php echo $p->nombre; ?></td>
+        <td><?php echo $p->descripcion; ?></td>
+        <td><?php echo $p->precio; ?></td>
+        <td><?php echo $p->stock; ?></td>
+        <td><?php echo $p->id_categoria; ?></td>
+        <td><a href="<?php echo BASE_URL . "eliminarProducto/" . $p->id ?>">X</a></td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
 
 <form action="agregarProducto" method="post">
 
+  <h1>Agregar Producto</h1>
+  <label for="">Ingrese el nombre del producto</label>
+  <input type="text" name="nombre" placeholder="Ingrese nombre del producto..." required>
+
+  <label for="">Ingrese el precio del producto</label>
+  <input type="number" name="precio" placeholder="Ingrese precio del producto..." required>
+
+  <label for="">Ingrese el stock dispnible del producto</label>
+  <input type="number" name="stock" placeholder="Ingrese el stock dispnible,.." required>
+
+  <label for="">Descripción (Opcional)</label>
+  <input type="text" name="descripcion" placeholder="Ingrese una breve descripción...">
+
+  <label for="">Ruta de la Imagen (Opcional)</label>
+  <input type="text" name="imagen" placeholder="ej: mouse.jpg">
+
+  <label for="">Ingrese la categoria a la que corresponde</label>
+
+  <select name="id_categoria">
+    <option value="">Elija una opcion</option>
+    <?php foreach ($categorias as $c) { ?>
+      <option value="<?php echo $c->id ?>"><?php echo $c->nombre ?></option>
+    <?php } ?>
+  </select>
+
+  <button type="submit">Agregar</button>
 </form>
 
+<!-- redundante
 <form action="eliminarProducto" method="post">
+  <h1>Eliminar Producto</h1>
+  <label for="">Elija el producto a eliminar</label>
+  <select name="id">
+    <option value="">Elija una opcion</option>
+    <?php foreach ($productos as $p) { ?>
+      <option value="<?php echo $p->id ?>"><?php echo $p->nombre ?></option>
+    <?php } ?>
+  </select>
 
+  <button type="submit">Eliminar</button>
+</form>
+-->
+<form action="editarProducto" method="post">
+  <h1>Editar Producto</h1>
+
+  <label for="">Ingrese el producto a editar</label>
+  <select name="id">
+    <option value="">Elija un producto</option>
+    <?php foreach ($productos as $p) { ?>
+      <option value="<?php echo $p->id ?>"><?php echo $p->nombre ?></option>
+    <?php } ?>
+  </select>
+
+  <label for="">Ingrese el nombre del producto</label>
+  <input type="text" name="nombre" placeholder="Ingrese nombre del producto..." required>
+
+  <label for="">Ingrese el precio del producto</label>
+  <input type="number" name="precio" placeholder="Ingrese precio del producto..." required>
+
+  <label for="">Ingrese el stock dispnible del producto</label>
+  <input type="number" name="stock" placeholder="Ingrese el stock dispnible,.." required>
+
+  <label for="">Descripción (Opcional)</label>
+  <input type="text" name="descripcion" placeholder="Ingrese una breve descripción...">
+
+  <label for="">Ruta de la Imagen (Opcional)</label>
+  <input type="text" name="imagen" placeholder="ej: mouse.jpg">
+
+  <label for="">Ingrese la categoria a la que corresponde</label>
+  <select name="id_categoria">
+    <option value="">Elija una categoria</option>
+    <?php foreach ($categorias as $c) { ?>
+      <option value="<?php echo $c->id ?>"><?php echo $c->nombre ?></option>
+    <?php } ?>
+  </select>
+  <button type="submit">Editar</button>
 </form>
 
-<form action="editarProducto" method="post">
+<!-- -------------------------------------- -->
 
+<form action="agregarCategoria" method="post">
+
+  <h1>Agregar Categoria</h1>
+  <label for="">Ingrese el nombre de la categoria</label>
+  <input type="text" name="nombre" placeholder="Ingrese nombre de la categoria..." required>
+
+  <button type="submit">Agregar</button>
+</form>
+
+<!-- redundante
+
+<form action="eliminarCategoria" method="post">
+  <h1>Eliminar Categoria</h1>
+  <label for="">Elija la categoria a eliminar</label>
+  <select name="id">
+    <option value="">Elija una opcion</option>
+    <?php foreach ($categorias as $c) { ?>
+      <option value="<?php echo $c->id ?>"><?php echo $c->nombre ?></option>
+    <?php } ?>
+  </select>
+
+  <button type="submit">Eliminar</button>
+</form>
+-->
+
+<form action="editarCategoria" method="post">
+  <h1>Editar Categoria</h1>
+
+  <label for="">Elija la categoria a editar</label>
+  <select name="id">
+    <option value="">Elija una opcion</option>
+    <?php foreach ($categorias as $c) { ?>
+      <option value="<?php echo $c->id ?>"><?php echo $c->nombre ?></option>
+    <?php } ?>
+  </select>
+
+  <label for="">Ingrese el nombre de la categoria</label>
+  <input type="text" name="nombre" placeholder="Ingrese nombre de la categoria..." required>
+  <button type="submit">Editar</button>
 </form>
